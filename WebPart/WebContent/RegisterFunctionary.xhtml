@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+		<h:head>
+		<title>Register Functionary</title>
+		
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+		</style>
+		</h:head>
+
+<body>
+	<b:navBar brand="iStoque" brandHref="principal.xhtml" inverse="true">
+  	<b:navbarLinks>
+  		<b:navLink value="Vender Produtos" href="sellProduct.xhtml"></b:navLink>
+  		<b:navLink value="Listar Produtos" href="ProductList.xhtml"></b:navLink>
+  		<b:navLink value="Listar Funcionarios" href="FunctionaryList.xhtml"></b:navLink>
+	    <b:navLink value="Cadastrar Funcionario" href="RegisterFunctionary.xhtml"></b:navLink>   	    
+  		<b:navLink value="Cadastrar Produto" href="RegisterProduct.xhtml"></b:navLink>  	  
+  	</b:navbarLinks>
+	</b:navBar>
+	
+	<b:container class="painel" layout="fluid">
+	
+	<b:form>
+		<b:row>  
+	    <b:inputText span="2" placeholder="Nome do funcionário" style = "width: 100%;" label="Nome de usuário do funcionário" value="#{regFunctionaryMB.nameFunc}" />
+	   </b:row>
+		
+		
+		<b:row>
+			<b:inputText span="2" placeholder="Email" style = "width: 100%;" label="Email" value="#{regFunctionaryMB.emailFunc}"/>
+	   </b:row>
+	   
+	   <b:row>  
+	    <b:inputText span="2" placeholder="Login do funcionário" style = "width: 100%;" label="Login do funcionário" value="#{regFunctionaryMB.loginFunc}" />
+	   </b:row>
+	   
+		<b:row>
+			<b:inputSecret span="2" placeholder="Senha"  id="password" fieldId="j_password" name="j_password"
+                 value="#{regFunctionaryMB.passFunc}"
+                 label="Senha" />
+		</b:row>
+		
+		<b:commandButton value="Cadastrar" action="#{regFunctionaryMB.regFunc()}" update="@form" look="primary" style="width:80px, padding:10px"/>
+		
+	</b:form>
+
+</b:container>
+
+</body>
+
+</html>

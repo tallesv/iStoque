@@ -1,0 +1,82 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+      
+		<h:head>
+		<title>Editar funcionario</title>
+		
+		<style type="text/css">
+			body {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 14px;
+			}
+			.header {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 18px;
+			}
+			.bottom {
+				  font-family: Verdana, Arial, Helvetica, sans-serif;
+				  font-size: 9px;
+				  text-align: center;
+				  vertical-align: middle;
+				  color: #8E969D;
+			}
+		</style>
+		</h:head>
+
+<body>
+	<b:navBar brand="iStoque" brandHref="principal.xhtml" inverse="true">
+  	<b:navbarLinks>
+  		<b:navLink value="Vender Produtos" href="sellProduct.xhtml"></b:navLink>
+  		<b:navLink value="Listar Produtos" href="ProductList.xhtml"></b:navLink>
+  		<b:navLink value="Listar Funcionarios" href="FunctionaryList.xhtml"></b:navLink>
+	    <b:navLink value="Cadastrar Funcionario" href="RegisterFunctionary.xhtml"></b:navLink>   	    
+  		<b:navLink value="Cadastrar Produto" href="RegisterProduct.xhtml"></b:navLink> 	  
+  	</b:navbarLinks>
+	</b:navBar>
+	<center>
+	<h2>Funcionario</h2>
+		<h:form id="form" class="form-horizontal">
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <h2 style="text-align: center" class="col-sm-4">Edite o funcionario</h2>
+            </div>
+            <hr/>
+            <div class="form-group">
+                <h:outputLabel for="username" class="control-label col-sm-2">Nome:</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="name-id" value="#{functionary.name}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="email" class="control-label col-sm-2">Email:</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="email-id" value="#{functionary.email}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="login" class="control-label col-sm-2">Login:</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputText id="login-id" value="#{functionary.login}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <h:outputLabel for="password" class="control-label col-sm-2">Senha:</h:outputLabel>
+                <div class="col-sm-4">
+                    <h:inputSecret id="password-id" value="#{functionary.password}" class="form-control"/>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-4">
+                    <h:commandButton value="Update" action="#{regFunctionaryMB.updateFunctionary(functionary.login, functionary)}" class="btn btn-primary updateBtnStyle" />
+                </div>
+            </div>
+        </h:form>
+    </center>
+
+</body>
+
+</html>
